@@ -14,9 +14,9 @@ RUN chmod 700 /root/.ssh/deploy_key
 RUN chown -R root:root /root/.ssh
 
 RUN touch /root/.ssh/known_hosts
+RUN ssh-keyscan github.com >> /root/.ssh/known_hosts
 
-
-RUN git clone https://github.com/Ram28Anand/HelloWorld.git /myapp/
+RUN git clone https://github.com/Ram28Anand/NodeApp.git /myapp/
 RUN cp -R /myapp/* /home/app/
 
 WORKDIR /home/app
